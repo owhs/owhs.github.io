@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <title>Radar Chart Designer</title>
+  <style>*{scrollbar-width:auto;scrollbar-color:#176f3a #fff}::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{background:#0001}::-webkit-scrollbar-thumb{background-color:#176f3a;border-radius:10px;border:0}html,body{height:100%;margin:0;font-family:sans-serif}body{display:flex;flex-direction:column}button,a{cursor:pointer}aside{min-width:300px;width:300px;background:#eee;padding:5px;border-right:1px solid #ddd;position:relative;overflow:hidden;flex-direction:column}main{width:100%;padding:10px;background-image:linear-gradient(45deg,#0001 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#0001 75%),linear-gradient(45deg,transparent 75%,#0001 75%),linear-gradient(45deg,#0001 25%,transparent 25%);background-size:20px 20px;background-position:0 0,0 0,-50px -50px,50px 50px}#spider{width:100%;height:100%}input{margin:5px}.flex{display:flex;height:calc(100% - 41px)}aside .flex>*{width:100%;text-overflow:ellipsis;white-space:nowrap;overflow:hidden}aside>div[label]{border:1px solid #0002;padding:5px 2px;margin:5px 0;border-radius:3px;background:#fff8;display:none;user-select:none;position:relative;overflow:auto;max-height:450px;padding-top:15px}aside .flex>label{line-height:31.5px;text-align:right;padding-right:5px;font-variant-caps:all-small-caps;font-size:14px}aside>div[label]:before{content:attr(label);font-size:12px;font-variant-caps:all-small-caps;color:#888;text-align:center;display:block;border-bottom:1px solid #e5e5e5;position:sticky;top:-15px;padding:2px;margin-top:-15px;background:#f7f7f7}input#values,label[for=values]{cursor:pointer}nav{height:40px;display:flex;background:#176f3a;border-bottom:1px solid #146032}nav>a{line-height:40px;padding:0 10px;height:40px;min-width:90px;text-align:center;outline:0;display:block;color:#ddd;text-decoration:none;font-variant:small-caps;transition:color .3s,box-shadow .3s,background .3s}nav>a:hover,nav>a.active{color:#fff;box-shadow:0 1px 0 #12bc55;background:#fff1}nav>a.logo{background:url(favicon.ico) center no-repeat;background-size:70% auto;filter:invert(1) contrast(3.5) saturate(0) brightness(1.2);padding:0 20px;transition:filter .5s;margin:0 15px 0 5px;min-width:0;box-shadow:none!important}nav>a.logo:hover{filter:invert(1) contrast(3.5) saturate(0) brightness(2)}.flex>aside input{outline:0;border:1px solid #ccc;padding:3px 5px;border-radius:4px;transition:border .4s}.flex>aside input:not([type=color]):hover{border:1px solid #5ca97a}.flex>aside input[type=checkbox]{filter:hue-rotate(240deg) brightness(0.9) contrast(1.3)}.flex>aside input[type=checkbox],.flex>aside input[type=color]{cursor:pointer}.flex>aside input:focus{border:1px solid #176f3a}aside[v=diagram]>.diagram,aside[v=theme]>.theme,aside[v=view]>.view,aside[v=file]>.file{display:block}aside .table>div{display:flex;width:100%}aside .table>div input,aside #data.table>div a{width:100%;border:1px solid #0000;height:100%;border-radius:2px;margin:1px;background:#eee;transition:border .4s,background .4s}aside .table>div input:first-child{text-align:right}aside .table>div input:hover{background:#f3f3f3;border-color:#ccc0!important}aside .table>div input:focus{border-color:#eee!important;background:#f9f9f9}aside div>a.add{position:sticky;top:-13px;right:2px;float:right;margin-top:-17px;padding:0;text-decoration:none;line-height:15px;width:15px;font-size:19px;text-align:center;color:#dedede;background:#22894b;border-radius:3px;transition:color .4s,background .3s}aside div>a.add:hover{background:#176f3a;color:#fff}aside #data.table>div a{width:20px;height:20px;min-width:20px;text-align:center;text-decoration:none;color:#e7c8c8;margin:auto 1px}aside #data.table>div a:hover{background:#ccc;color:#8f3333}aside .table>div input:first-child+input{width:30%;text-align:center}svg#spider text,svg#spider #values>g>*{cursor:pointer}aside>.file button{margin:4px 2px 0}aside button{border:0;padding:4px 8px;cursor:pointer;border-radius:4px;background:#eee;color:#333;outline:0;transition:color .3s,background .3s}aside button:hover{background:#ccc;color:#000}body>nav+label{position:absolute;right:10px;height:40px;width:40px;cursor:pointer;text-align:center;line-height:40px;font-size:22px;filter:saturate(.2);transition:filter .3s}html.dark body>nav+label{filter:saturate(1.4)}body>nav+label:hover{filter:saturate(.7)!important}body>nav+label:before{content:"\1F4A1"}body>nav+label>input{display:none}aside:after{content:"Radar Chart Designer - v0.4 - by owhs";font-size:11px;position:absolute;bottom:0;left:0;right:0;height:20px;background:#0002;line-height:20px;text-align:center;color:#000;opacity:.2;pointer-events:none;transition:opacity .5s}aside:hover:after{opacity:0}nav:hover~.flex>aside:after{opacity:.6}.flex>aside .flex>input:not(:only-child){max-width:100px;min-width:100px;width:100px}.flex>aside .flex>input[type=number]{max-width:88px;min-width:88px;width:88px}html.dark aside:after{color:#fff}html.dark{background-color:#181a1b!important;color-scheme:dark!important}html.dark,html.dark body,html.dark input,html.dark textarea,html.dark select,html.dark button,html.dark dialog{background-color:#181a1b}html.dark,html.dark body,html.dark input,html.dark textarea,html.dark select,html.dark button{border-color:#726a5d;color:#e6e4e1}html.dark a{color:#3290fc}html.dark table{border-color:#535a5d}html.dark ::placeholder{color:#b0a99f}html.dark input:-webkit-autofill,html.dark textarea:-webkit-autofill,html.dark select:-webkit-autofill{background-color:#3f4300!important;color:#e6e4e1!important}html.dark ::selection{background-color:#004ca8!important;color:#e6e4e1!important}html.dark ::-moz-selection{background-color:#004ca8!important;color:#e6e4e1!important}:root{--darkreader-neutral-background:#131516;--darkreader-neutral-text:#d6d2cd;--darkreader-selection-background:#004ca8;--darkreader-selection-text:#e6e4e1}html.dark aside{background-image:initial;background-color:#222426;border-right-color:#393d40}html.dark main{background-image:linear-gradient(45deg,rgba(0,0,0,0.07) 25%,rgba(0,0,0,0) 25%),linear-gradient(45deg,rgba(0,0,0,0) 75%,rgba(0,0,0,0.07) 75%),linear-gradient(45deg,rgba(0,0,0,0) 75%,rgba(0,0,0,0.07) 75%),linear-gradient(45deg,rgba(0,0,0,0.07) 25%,rgba(0,0,0,0) 25%)}html.dark aside > div[label]{border-color:rgba(139,129,114,0.13);background-image:initial;background-color:rgba(24,26,27,0.53)}html.dark aside > div[label]::before{color:#9b9387;border-bottom-color:#363b3d;background-color:#190000}html.dark nav{background-image:initial;background-color:#12582e;border-bottom-color:#26b45e}html.dark nav > a{color:#d1cdc7;text-decoration-color:initial}html.dark nav > a:hover,html.dark nav > a.active{color:#e6e4e1}html.dark nav > a.logo{background-image:url(favicon.ico);background-color:initial}html.dark .flex > aside input{outline-color:initial;border-color:#3d4345}html.dark .flex > aside input:hover{border-color:#3c7351}html.dark .flex > aside input:focus{border-color:#25b05c}html.dark aside .table > div input,html.dark aside #data.table > div a{border-color:rgba(139,129,114,0);background-image:initial;background-color:#222426}html.dark aside .table > div input:hover{background-image:initial;background-color:#1f2123;border-color:rgba(61,67,69,0)!important}html.dark aside .table > div input:focus{background-image:initial;background-color:#1b1e1f;border-color:#34383a!important}html.dark aside #data.table > div a{text-decoration-color:initial;color:#ddb3b3}html.dark aside #data.table > div a:hover{background-image:initial;background-color:#34383a;color:#cc7474}</style>
+	<link rel="shortcut icon" href="favicon.ico" /> 
+	<script src="https://unpkg.com/fflate"></script>
+  </head>
+  <body>
+  <nav id="titlebar">
+    <a class="logo" title="New Diagram (Blank slate)" accesskey="n"></a>
+    <a class="active" title="File Options" accesskey="1">file</a>
+    <a title="Diagram Details" accesskey="2">diagram</a>
+    <a title="Diagram Theme" accesskey="3">theme</a>
+  </nav><label for="darkMode" accesskey="b"><input type="checkbox" id="darkMode" /></label>
+  <div class="flex">
+	<aside v="file">
+		<div label="Diagram Title" class="diagram">
+		  <div class="flex">
+		  <input type="text" id="title" placeholder="title"/>
+		  </div>
+		</div>
+		<div label="Diagram Boundries" class="diagram">
+		  <div class="flex">
+			<label for="minValue" title="Minimum bound shown on diagram">Min:</label>
+			<input type="number" id="minValue" value="0"  min="0"/>
+		  </div>
+		  <div class="flex">
+			  <label for="maxValue" title="Maximum bound shown on diagram">Max:</label>
+			  <input type="number" id="maxValue" value="10" min="10"/>
+		  </div>
+		</div>
+		<div label="Diagram Data" class="diagram">
+		  <a class="add" accesskey="a" title="Add label to chart">+</a>
+		  <input type="hidden" id="values" />
+		  <div class="table" id="data">
+		  
+		  </div>
+		</div>
+		<div label="Diagram Colours" class="theme">
+		  <div class="flex">
+		  <label for="fillColor">Fill Colour:</label>
+		  <input type="color" id="fillColor" value="#1c8235" />
+		  </div>
+		  <div class="flex">
+		  <label for="strokeColor">Stroke Colour:</label>
+		  <input type="color" id="strokeColor" value="#000000" />
+		  </div>
+		  <div class="flex">
+		  <label for="ringColor">Rings Colour:</label>
+		  <input type="color" id="ringColor" value="#000000" />
+		  </div>
+		  <div class="flex">
+		  <label for="bgColor">Background Colour:</label>
+		  <input type="color" id="bgColor" value="#ffffff" />
+		  </div>
+		  <div class="flex">
+		  <label for="noBg">Transparent Background:</label>
+		  <input type="checkbox" id="noBg" checked />
+		  </div>
+		</div>
+		<div label="Labels" class="theme">
+		  <div class="flex">
+		  <label for="textColor">Text Colour:</label>
+		  <input type="color" id="textColor" value="#ffffff" />
+		  </div>
+		  <div class="flex" title="svg only">
+		  <label for="highlightColor">Highlight Colour:</label>
+		  <input type="color" id="highlightColor" value="#ffff00" />
+		  </div>
+		  <div class="flex">
+		  <label for="shadowColor">Shadow Colour:</label>
+		  <input type="color" id="shadowColor" value="#000000" />
+		  </div>
+		  <div class="flex">
+		  <label for="textShadow">Shadow Size:</label>
+		  <input type="number" id="textShadow" value="1" />
+		  </div>
+		  <div class="flex">
+		  <label for="noNumbers">Show Numbers:</label>
+		  <input type="checkbox" id="noNumbers" checked />
+		  </div>
+		</div>
+		<div label="File Save" class="file">
+		  <center>
+		  <button id="saveSpidBtn">Save Diagram</button>
+		  <button id="openSpidBtn">Open Diagram</button><br>
+		  <button id="openEGBtn">Open Example</button>
+		</div>		
+		<div label="URL Share" class="file">
+			<div class="flex">
+		  <label for="shareMode" title="Automatically saves diagram data in the URL, allowing sharing by link">Live URL:</label>
+		  <input type="checkbox" id="shareMode" checked onchange="drawSpiderDiagram()" />
+		  </div>
+		</div>		
+		
+		<div label="SVG Export" class="file">
+		  <center>
+		  <button id="saveBtn">Save SVG</button>
+		</div>
+		<div label="PNG Export Settings" class="file">
+		  <div class="flex">
+		  <label for="retinaScale">Retina Scale:</label>
+		  <input type="number" id="retinaScale" value="4" max="10" min="1" />
+		  </div>
+		  <center>
+		  <button id="savePNGBtn">Save PNG</button>
+		</div>
+	</aside>
+	<main>
+		<svg id="spider"></svg>
+	</main>
+  </div>
+    <script>function randomIntFromInterval(a,b){return Math.floor(Math.random()*(b-a+1)+a)}String.prototype.hexEncode=function(){var a,b,c="";for(b=0;b<this.length;b++)a=this.charCodeAt(b).toString(16),c+=("000"+a).slice(-4);return c},String.prototype.hexDecode=function(){var a,b=this.match(/.{1,4}/g)||[],c="";for(a=0;a<b.length;a++)c+=String.fromCharCode(parseInt(b[a],16));return c};function download(a,b){var c=document.createElement("a");if(c.setAttribute("href","data:text/plain;charset=utf-8,"+encodeURIComponent(b)),c.setAttribute("download",a),document.createEvent){var d=document.createEvent("MouseEvents");d.initEvent("click",!0,!0),c.dispatchEvent(d)}else c.click()}const spider=document.getElementById("spider"),titleInput=document.getElementById("title"),labelsInput=document.getElementById("values"),minValueInput=document.getElementById("minValue"),maxValueInput=document.getElementById("maxValue"),retinaScaleInput=document.getElementById("retinaScale"),previewBtn=document.getElementById("previewBtn"),saveBtn=document.getElementById("saveBtn"),shareBtn=document.getElementById("shareBtn"),savePNGBtn=document.getElementById("savePNGBtn"),saveSpidBtn=document.getElementById("saveSpidBtn"),openSpidBtn=document.getElementById("openSpidBtn"),openEGBtn=document.getElementById("openEGBtn"),fillColorInput=document.getElementById("fillColor"),strokeColorInput=document.getElementById("strokeColor"),ringColorInput=document.getElementById("ringColor"),textColorInput=document.getElementById("textColor"),highlightColorInput=document.getElementById("highlightColor"),shadowColorInput=document.getElementById("shadowColor"),textShadowInput=document.getElementById("textShadow"),bgColor=document.getElementById("bgColor"),noBg=document.getElementById("noBg"),noNumbers=document.getElementById("noNumbers"),darkMode=document.getElementById("darkMode"),shareMode=document.getElementById("shareMode"),labelDataTable=document.getElementById("data");document.querySelectorAll("aside .flex>label").forEach(a=>a.title=a.title||a.innerText.slice(0,-1)),document.querySelectorAll("input").forEach(a=>a.setAttribute("defaultValue",a.value));const formInputs=[titleInput,labelsInput,minValueInput,maxValueInput,fillColorInput,strokeColorInput,textColorInput,textShadowInput,highlightColorInput,shadowColorInput,ringColorInput,bgColor,noBg,noNumbers],hex=()=>btoa(fflate.strFromU8(fflate.compressSync(fflate.strToU8(JSON.stringify(formInputs.map(a=>a.matches("[type=checkbox]")?+a.checked:a.value)).hexEncode())),!0)),addLabel=(b,c,d)=>{var f=document.createElement("div"),e=document.createElement("input"),g=document.createElement("input"),h=document.createElement("a");e.value=b||"",g.value=c||"",g.setAttribute("type","number"),g.setAttribute("min",minValueInput.value),g.setAttribute("max",maxValueInput.value),h.href="#",h.innerText="-",h.onclick=a=>{a.preventDefault(),confirm("This will remove the label, are you sure?")&&f.remove(),parseData()},e.onchange=e.onclick=e.onkeyup=g.onchange=g.onclick=g.onkeyup=parseData,f.append(e),f.append(g),f.append(h),labelDataTable.append(f),document.querySelector("#titlebar>a+a+a").click(),d&&document.querySelector("#data>div:last-child input").select()},load=a=>{var b=JSON.parse(fflate.strFromU8(fflate.decompressSync(fflate.strToU8(atob(a),!0))).hexDecode());if(4>b.length)throw Error("idfk");formInputs.forEach((a,c)=>{a.matches("[type=checkbox]")?a[b[c]?"setAttribute":"removeAttribute"]("checked",""):a.value=b[c]});var c=document.querySelector(".table");c.innerHTML="",JSON.parse(formInputs[1].value).forEach(a=>{addLabel(a[0],a[1])})};function parseData(){for(var a=labelDataTable.querySelectorAll("input"),b=[],c=0;c<a.length;c+=2)b.push([a[c].value,+a[c+1].value]);return labelsInput.value=JSON.stringify(b),drawSpiderDiagram(),b}var radius,center,title="";const drawSpiderDiagram=()=>{var a=hex();shareMode.checked?history.replaceState("","","?d="+a):history.replaceState("","","?"),saveSpidBtn.setAttribute("title",a.length+" bytes"),title=titleInput.value;const b=JSON.parse(labelsInput.value),c=b.map(a=>a[0]);var d=[...new Set(b.map(a=>a[1]))].sort((c,a)=>c-a);maxValueInput.setAttribute("min",d[d.length-1]),minValueInput.setAttribute("max",d[0]);const e=parseFloat(minValueInput.value),f=parseFloat(maxValueInput.value),g=fillColorInput.value,h=strokeColorInput.value,j=highlightColorInput.value,k=shadowColorInput.value,l=ringColorInput.value,m=textColorInput.value,n=strokeColorInput.value,o=textShadowInput.value;spider.innerHTML="";var p=document.createElementNS("http://www.w3.org/2000/svg","style");p.innerHTML="text{user-select:none;text-anchor:middle;dominant-baseline:middle;font-family:sans-serif;fill:"+textColorInput.value+";"+(0<o?"filter:drop-shadow(0 0 "+o+"px "+k+");text-shadow:0 0 "+o+"px "+k+";":"")+"}svg>text{font-size:xx-large}circle{opacity:.3;stroke-width:.5;fill:none;stroke:"+l+"}circle:first-of-type{fill:"+g+"}#values>g>circle{opacity:0.7;fill:"+textColorInput.value+";stroke-width:1;stroke:"+n+"}polygon{stroke-width:1px;opacity:.7;fill:"+g+";stroke:"+n+"}#values>g>*{transition:fill.4s}#values>g:hover>*{fill:"+j+"}"+(noBg.checked?"":"svg{background:"+bgColor.value+"}"),spider.appendChild(p),0<o,radius=Math.min(spider.clientWidth,spider.clientHeight)/2-50,center={x:spider.clientWidth/2,y:spider.clientHeight/2+25};const q=2*Math.PI/c.length,r=document.createElementNS("http://www.w3.org/2000/svg","text");r.setAttribute("x",center.x),r.setAttribute("y",center.y-radius-50),r.textContent=title,r.onclick=()=>{document.querySelector("#titlebar>a+a+a").click(),document.querySelector("#title").focus()},spider.appendChild(r);var s=document.createElementNS("http://www.w3.org/2000/svg","g");s.id="rings";for(var t,u=0;u<f;u++)t=document.createElementNS("http://www.w3.org/2000/svg","circle"),t.setAttribute("cx",center.x),t.setAttribute("cy",center.y),t.setAttribute("r",radius/f*(f-u)),s.appendChild(t);spider.appendChild(s);const v=document.createElementNS("http://www.w3.org/2000/svg","polygon");spider.appendChild(v);let w="";s=document.createElementNS("http://www.w3.org/2000/svg","g"),s.id="values";for(let a=0;a<c.length;a++){var x=document.createElementNS("http://www.w3.org/2000/svg","g");const c=q*a-Math.PI/2,d=b[a][1];var y=radius+10,z={x:center.x+y*Math.cos(c),y:center.y+y*Math.sin(c)},A=document.createElementNS("http://www.w3.org/2000/svg","text");A.setAttribute("x",z.x),A.setAttribute("y",z.y),A.textContent=b[a][0],y=(d-e)/(f-e)*(radius/f*(f-2)),z={x:center.x+y*Math.cos(c),y:center.y+y*Math.sin(c)};var B=document.createElementNS("http://www.w3.org/2000/svg","text");B.setAttribute("x",z.x),B.setAttribute("y",z.y),B.textContent=d,y=(d-e)/(f-e)*radius,z={x:center.x+y*Math.cos(c),y:center.y+y*Math.sin(c)};var C=document.createElementNS("http://www.w3.org/2000/svg","circle");C.setAttribute("cx",z.x),C.setAttribute("cy",z.y),C.setAttribute("r",5),x.appendChild(C),noNumbers.checked&&x.appendChild(B),x.appendChild(A),x.onclick=a=>{var b=a.target,c=b.closest("g"),e=c.parentElement,f=[...e.children].indexOf(c),g=document.querySelectorAll("#data>div")[f].querySelectorAll("input");document.querySelector("#titlebar>a+a+a").click(),g[2>[...c.children].indexOf(b)?1:0].select()},s.appendChild(x),w+=`${z.x},${z.y} `}spider.appendChild(s),v.setAttribute("points",w)};formInputs.forEach(a=>a.onkeyup=a.onchange=a.onclick=a.oninput=drawSpiderDiagram),minValueInput.addEventListener("change",()=>{document.querySelectorAll("#data input[type=number]").forEach(a=>a.setAttribute("min",minValueInput.value))}),maxValueInput.addEventListener("change",()=>{document.querySelectorAll("#data input[type=number]").forEach(a=>a.setAttribute("max",maxValueInput.value))}),darkMode.addEventListener("change",()=>{document.querySelector("html").classList[darkMode.checked?"add":"remove"]("dark")}),window.addEventListener("resize",drawSpiderDiagram,!0),saveBtn.addEventListener("click",()=>{const b=document.querySelector("svg").cloneNode(1);b.removeAttribute("id"),b.setAttribute("version","1.0"),b.setAttribute("xmlns","http://www.w3.org/2000/svg"),b.setAttribute("viewBox",radius+" "+(titleInput.value?0:50)+" "+(center.x+60)+" "+(center.x+(titleInput.value?50:0)));const c=btoa(unescape(encodeURIComponent(b.outerHTML))),d=document.createElement("a"),a=new MouseEvent("click");d.download=(title||titleInput.value||"spider-diagram")+".svg",d.href="data:image/svg+xml;base64,"+c,d.dispatchEvent(a)});function downloadSVGAsPNG(a){const b=retinaScaleInput.value||4,c=document.createElement("canvas"),d=document.querySelector("svg").cloneNode(1);d.removeAttribute("id"),d.setAttribute("version","1.0"),d.setAttribute("xmlns","http://www.w3.org/2000/svg"),d.setAttribute("viewBox",radius+" "+(titleInput.value?0:50)+" "+(center.x+60)+" "+(center.x+(titleInput.value?60:0))),d.style.zoom=b;const e=btoa(unescape(encodeURIComponent(d.outerHTML))),f=parseInt((center.x+60)*b),g=parseInt((center.x+(titleInput.value?60:0))*b),h=document.createElement("img");h.src="data:image/svg+xml;base64,"+e,h.onload=function(){c.setAttribute("width",f),c.setAttribute("height",g);const b=c.getContext("2d");b.drawImage(h,0,0,f,g);const d=c.toDataURL("image/png");if(window.navigator.msSaveBlob)window.navigator.msSaveBlob(c.msToBlob(),(title||titleInput.value||"spider-diagram")+".png"),a.preventDefault();else{const b=document.createElement("a"),a=new MouseEvent("click");b.download=(title||titleInput.value||"spider-diagram")+".png",b.href=d,b.dispatchEvent(a)}c.remove()}}savePNGBtn.addEventListener("click",downloadSVGAsPNG),saveSpidBtn.addEventListener("click",()=>{download((title||titleInput.value||"spider-diagram")+".spd",hex())}),openEGBtn.addEventListener("click",()=>{confirm("Are you sure? You will lose any progress!")&&(load("H4sIAB5kA2QAA62TURLCIAxErxRBUK+jvf8Z3IftTKS0hU4/MiEhLyxkMEtvsxDMcjJ7POVvsklrk//88uwHrfHUF5vjUgMz9yCOipd9uKi+ST1ZH7Kc4dk4wFLrWV2im71XrPLdLLWefQ2waDx7Lu/q2TzAorFxbuHdvPWk/7H61LmgBPmMlyZmyCzouaoT27K6LusuLau17HG87Vb/Xh1X6S1al78xfQHEA72OeAMAAA=="),parseData())}),openSpidBtn.addEventListener("click",()=>{var a=document.createElement("input");a.type="file",a.setAttribute("accept",".spd"),a.onchange=a=>{var b=a.target.files[0],c=new FileReader;c.readAsText(b,"UTF-8"),c.onload=a=>{var b=a.target.result;load(b),parseData()}},a.click()});var tit=document.querySelector("#titlebar");tit.onclick=b=>{b.preventDefault();var c=b.target,d=c.innerText,e=document.querySelector("div>aside");c.matches(".logo")&&confirm("Are you sure? You will lose any progress!")&&(location.search="");c.matches("a")&&d&&(tit.querySelector("#titlebar .active").classList.remove("active"),c.classList.add("active"),e.setAttribute("v",d))},document.querySelector(".flex>aside>.diagram>.add").onclick=()=>{addLabel("label",Math.round((maxValueInput.value-minValueInput.value)/2),1),parseData()},((a,b)=>{!!a&&(b=a.split("#")[0].split("&")[0].split("?d=")[1])&&(load(b),drawSpiderDiagram())})(location.search);</script>
+  </body>
+</html>
